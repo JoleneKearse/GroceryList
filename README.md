@@ -13,11 +13,11 @@ This is a _test_ app for me; I'm coding from memory with minimal checks of my no
 
 ## MVP
 
-## My Process
+## The Process
 
-### Setting Up The Project
+### Set Up the Project
 
-To follow along ensure you have:
+To follow along, ensure you have:
 
 - the **latest [Node version](https://nodejs.org/en/) installed**. You can check in the **terminal** with
 
@@ -70,7 +70,7 @@ Super-fast success is proven with the `node_modules` folder being added to our f
 
 ![](screenshots/setup7.png)
 
-### Spinning Up The Servers
+### Spin Up the Servers
 
 1. Start the development server on your computer with
 
@@ -97,3 +97,33 @@ You will get
 ![server options](screenshots/server3.png)
 
 Type the network address, then you can check out your changes on desktop and/or mobile!
+
+### Rid Ourselves of the Boilerplate
+
+Now it's time to get rid of the defaults!
+
+1. It's all coming from our `/src` folder, as you can see by **l**i**s**ting all the files:
+
+```
+ls src/
+```
+
+2. Remove all the files **except `main.jsx`** with
+
+```
+rm src/App.css
+```
+
+3. Now we can actually work within our files! In `main.jsx`, remove the reference to `index.css` on _line 4_.
+
+![delete the css import on line 4](screenshots/boilerplate1.png)
+
+### On to the Code!
+
+1. In the `src` folder, add a new file called capital `App.jsx`.
+
+2. Create a function component called `App`.
+
+![initial App code](screenshots/App1.png)
+
+
