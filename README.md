@@ -34,40 +34,46 @@ node -v
 ```
 yarn create vite
 ```
+
 2. Enter your project name at the prompt after the quick installation.
-![Installation with project name prompt](screenshots\setup1.png)
+   ![Installation with project name prompt](screenshots/setup1.png)
 3. Press `Enter` to have the package automatically named.
 4. Use the arrow keys to choose a framework.
-![React project selected](screenshots\setup2.png)
+   ![React project selected](screenshots/setup2.png)
 5. Pick JavaScript or TypeScript (_I went with JavaScript_)
-![JavaScript chosen](screenshots\setup3.png)
+   ![JavaScript chosen](screenshots/setup3.png)
 6. Check out the cool file structure!
-![file structure](screenshots\setup4.png)
-And the message that the scaffolding is complete.
-![complete message](screenshots\setup5.png)
+   ![file structure](screenshots/setup4.png)
+   And the message that the scaffolding is complete.
+   ![complete message](screenshots/setup5.png)
 7. Change directories. _I got my first learning moment here as I had used two words, so I had to enclose it in commas._
-![correct way to cd with whitespace](screenshots\setup6.png)
-7. Install dependencies with:
+   ![correct way to cd with whitespace](screenshots/setup6.png)
+8. Install dependencies with:
+
 ```
 yarn
 ```
+
 Super-fast success is proven with the `node_modules` folder being added to our file structure and this command line message:
-![](screenshots\setup7.png)
+![](screenshots/setup7.png)
 
 ### Spinning Up The Servers
 
 1. Start the development server on your computer with
+
 ```
 yarn run dev
 ```
+
 `Ctrl` + click the blue link to verify everything's working.
-![Hyperlink](screenshots\server1.png)
-2. Check it out on your mobile - _Yes, you heard that right!_ Either stop the current server with `Ctrl` + `C`, or just open up a new terminal.
-![opening a new terminal](screenshots\server2.gif)
+![Hyperlink](screenshots/server1.png) 2. Check it out on your mobile - _Yes, you heard that right!_ Either stop the current server with `Ctrl` + `C`, or just open up a new terminal.
+![opening a new terminal](screenshots/server2.gif)
 `cd` back to your directory, and type:
+
 ```
 yarn dev run --host
 ```
-You will get 
-![server options](screenshots\server3.png)
+
+You will get
+![server options](screenshots/server3.png)
 Type the network address, then you can check out your changes on desktop and/or mobile!
