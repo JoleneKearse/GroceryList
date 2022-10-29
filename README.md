@@ -118,6 +118,34 @@ rm src/App.css
 
 ![delete the css import on line 4](screenshots/boilerplate1.png)
 
+### Use Dracula UI
+
+![Dracula UI possibilities](screenshots/drac1.png)
+
+I had come across [Dracula UI](https://ui.draculatheme.com/) in my reading and really wanted to try it out! It describes itself as a:
+
+> Dark-first collection of UI patterns and components.
+
+First we need to install it to our project.
+
+1. 
+Let's take advantage of the **in-editor docs** and **autocomplete** function in VS Code, by installing an extension to bring in **Design System Packages**.
+
+1. `Ctrl` + `Shift` + `X` to open **Extensions** and search for  **Adobe XD extension**.
+
+![Adobe XD extension showing 45, 909 downloads](screenshots/drac2.png)
+
+2. Click on the extension icon in the **sidebar**, probably in the **bottom right corner**.
+
+![XD icon in status bar](screenshots/drac3.png)
+
+3. Click on **Load package**.
+
+![extension start screen to load DSPs](screenshots/drac4.png)
+
+4. Choose `node_modules/dracula-ui/dsp`
+
+
 ### On to the Code!
 
 1. In the `src` folder, add a new file called capital `App.jsx`.
