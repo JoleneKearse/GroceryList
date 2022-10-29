@@ -136,7 +136,7 @@ First we need to install it to our project.
 
 Let's take advantage of the **in-editor docs** and **autocomplete** function in VS Code, by installing an extension to bring in **Design System Packages**.
 
-1. `Ctrl` + `Shift` + `X` to open **Extensions** and search for  **Adobe XD extension**.
+1. `Ctrl` + `Shift` + `X` to open **Extensions** and search for **Adobe XD extension**.
 
 ![Adobe XD extension showing 45, 909 downloads](screenshots/drac2.png)
 
@@ -156,15 +156,33 @@ Let's take advantage of the **in-editor docs** and **autocomplete** function in 
 
 ![select CSS and React code snippets](screenshots/drac6.png)
 
-
-
-
 ### On to the Code!
 
 1. In the `src` folder, add a new file called capital `App.jsx`.
 
-2. Create a function component called `App`.
+2. Create a exported function component called `App`.
+
+3. Add the import statements at the top.
+
+4. **Check it's working** by adding a `main` with `h1`.
 
 ![initial App code](screenshots/App1.png)
 
+5. Bring in the **Dracula UI** components and styling! _I'm not sure if I was doing this optimally, but..._ I set up my **reset** in `index.css` with styles on the `body`. I centered my list with **CSS Grid** and set the background colour.
 
+```css
+body {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background-color: black;
+}
+```
+
+6. Import the `Box` component from Dracula UI and style it up with colour, margin, padding, rounded and width properties special to the Design System.
+
+![import box from dracula-ui, add it to the JSX with style properties](screenshots/App2.png)
+
+7. Add a `components` folder with `Header.jsx`.
+
+![](screenshots/Header1.png)
