@@ -128,7 +128,8 @@ I had come across [Dracula UI](https://ui.draculatheme.com/) in my reading and r
 
 First we need to install it to our project.
 
-1. 
+1. In your terminal, type `yarn add dracula-ui`.
+
 Let's take advantage of the **in-editor docs** and **autocomplete** function in VS Code, by installing an extension to bring in **Design System Packages**.
 
 1. `Ctrl` + `Shift` + `X` to open **Extensions** and search for  **Adobe XD extension**.
@@ -143,7 +144,13 @@ Let's take advantage of the **in-editor docs** and **autocomplete** function in 
 
 ![extension start screen to load DSPs](screenshots/drac4.png)
 
-4. Choose `node_modules/dracula-ui/dsp`
+4. Choose `node_modules/dracula-ui/dsp` by navigating through all the files.
+
+![Windows load window showing Grocery List to node_modules to dracula_ui to dsp](screenshots/drac5.png)
+
+5. Choose the Code Snippets for CSS and React, click Next and you can see the docs!
+
+![select CSS and React code snippets](screenshots/drac6.png)
 
 
 ### On to the Code!
