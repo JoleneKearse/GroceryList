@@ -185,4 +185,6 @@ body {
 
 7. Add a `components` folder with `Header.jsx`.
 
-![](screenshots/Header1.png)
+![import Heading and add the styling as ](screenshots/Header1.png)
+
+_The result so far..._
