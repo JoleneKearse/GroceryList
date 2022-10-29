@@ -130,6 +130,10 @@ First we need to install it to our project.
 
 1. In your terminal, type `yarn add dracula-ui`.
 
+2. I like to verify things, so you can check `package.json` to see it listed as a dependency on _line 11_.
+
+![dracula_ui version 1.0.3 showing as a dependency](screenshots/drac7.png)
+
 Let's take advantage of the **in-editor docs** and **autocomplete** function in VS Code, by installing an extension to bring in **Design System Packages**.
 
 1. `Ctrl` + `Shift` + `X` to open **Extensions** and search for  **Adobe XD extension**.
@@ -151,6 +155,8 @@ Let's take advantage of the **in-editor docs** and **autocomplete** function in 
 5. Choose the Code Snippets for CSS and React, click Next and you can see the docs!
 
 ![select CSS and React code snippets](screenshots/drac6.png)
+
+
 
 
 ### On to the Code!
