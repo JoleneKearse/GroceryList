@@ -183,8 +183,22 @@ body {
 
 ![import box from dracula-ui, add it to the JSX with style properties](screenshots/App2.png)
 
-7. Add a `components` folder with `Header.jsx`.
+#### Header
+
+1. Add a `components` folder with `Header.jsx`.
+
+2. Import Heading from Dracula UI on _line 2_.
+
+3. Add the inline styles.
 
 ![import Heading and add the styling as ](screenshots/Header1.png)
 
+4. Import Header in `App.jsx`, then add component.
+
+![import statement and component in the JSX](screenshots/App3.png)
+
 _The result so far..._
+
+![Grocery List title](screenshots/resu1.png)
+
+#### AddItem
