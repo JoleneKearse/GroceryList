@@ -68,6 +68,16 @@ svg:focus {
   filter: drop-shadow(1px 2px 3px #f70a80);
 }
 
+li.item:hover .drac-text,
+li.item:focus .drac-text {
+  color: #ff80bf;
+}
+
+/* TODO: find out how to enact this */
+.drac-checkbox:checked {
+  color: #f70a80;
+}
+
 /* ---------- LAYOUT ----------*/
 
 .inputBlock {

@@ -23,6 +23,12 @@ export default function ItemList() {
     }
   ]);
 
+  const handleCheck = (id) => {
+    const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
+    setItems(listItems);
+    localStorage.setItem('shoppinglist', JSON.stringify(listItems));
+  }
+
   return (
     <List py='sm' pb='sm' size="lg">
       {items.map((item) => (
@@ -38,10 +44,13 @@ export default function ItemList() {
             color="purple"
             defaultChecked={false}
             className='.drac-mr-lg'
+            onChange={(() => handleCheck(item.id))}
           />
           <label
             htmlFor='normal'
             className='drac-text drac-text-white drac-ml-md'
+            onDoubleClick={() => handleCheck(item.id)}
+            style={(item.checked) ? { textDecoration: 'line-through' } : null}
           >{item.item}</label>
           <FaTrashAlt
             role="button"
