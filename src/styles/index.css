@@ -49,6 +49,22 @@ img {
 
 /* ---------- TYPOGRAPHY ----------*/
 
+form svg {
+  font-size: 2rem;
+}
+
+.drac-checkbox + label {
+  font-size: 1.15rem;
+}
+
+svg {
+  font-size: 1.35rem;
+}
+
+svg:hover,
+svg:focus {
+  opacity: .6;
+}
 
 /* ---------- LAYOUT ----------*/
 
@@ -61,7 +77,11 @@ img {
 .drac-checkbox {
   margin-right: 1em;
 }
-.drac-checkbox+label {
-  font-size: 1.25rem;
+.drac-checkbox + label {
   margin: 0 .25em .5em 0;
+}
+
+li .item {
+  display: flex;
+  align-items: center;
 }

@@ -1,5 +1,5 @@
 import 'dracula-ui/styles/dracula-ui.css';
-import { List, Checkbox, spacingUtilities } from 'dracula-ui';
+import { List, Checkbox } from 'dracula-ui';
 import { useState } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
 
@@ -29,7 +29,7 @@ export default function ItemList() {
         <li
           className='item'
           key={item.id}
-          py='sm' 
+          py='sm'
           pb='sm'
         >
           <Checkbox
