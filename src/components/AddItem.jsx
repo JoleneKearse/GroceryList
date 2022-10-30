@@ -1,6 +1,6 @@
 import 'dracula-ui/styles/dracula-ui.css'
-import { Input } from 'dracula-ui'
-import { FaPlus } from 'react-icons/fa'
+import { Input } from 'dracula-ui';
+import { FaPlus } from 'react-icons/fa';
 
 export default function AddItem({ newItem, setNewItem, handleSubmit }) {
   return (

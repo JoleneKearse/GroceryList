@@ -11,6 +11,10 @@ export default function App() {
 
   const [newItem, setNewItem] = useState("");
 
+  const handleSubmit = () => {
+    
+  }
+
   return (
     <Box color='blackSecondary' m='lg' p='md' rounded='lg' width='md'>
       <Header />

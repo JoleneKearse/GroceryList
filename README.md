@@ -13,7 +13,14 @@ This is a _test_ app for me; I'm coding from memory with minimal checks of my no
 
 ## MVP
 
+This is a relatively simple Grocery List App. It can:
+
+- Add new items to the list either by pressing `Enter` or clicking the plus button
+-
+
 ## The Process
+
+I'm working in **VS Code** on a **Windows 11** computer, so all shortcuts I use are for those. I'm using the **ES7+ React/Redux/React-Native snippets** extension.
 
 ### Set Up the Project
 
@@ -201,10 +208,6 @@ _The result so far..._
 
 ![Grocery List title](screenshots/resu1.png)
 
-#### Set Up Main Component
-
-
-
 #### Use Font Awesome Icons: AddItem
 
 1. Create the component with imports of Dracula UI and Input component. Add `Input` tag to JSX with the style attributes.
@@ -252,5 +255,3 @@ Then verify it in `package.json`.
 3. Pass the props to `AddItem.jsx`, remembering to place them in **curly brackets**.
 
 ![pass newItem and setNewItem into the function](screenshots/AddItem3.png)
-
-
