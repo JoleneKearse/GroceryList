@@ -37,6 +37,19 @@ img {
   max-width: 100%;
 }
 
+.sr-only {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+/* ---------- TYPOGRAPHY ----------*/
+
+
 /* ---------- LAYOUT ----------*/
 
 Box {
@@ -46,3 +59,10 @@ Box {
   height: 100%;
   min-height: 100vh;
 }
+
+.inputBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

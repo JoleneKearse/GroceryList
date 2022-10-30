@@ -183,7 +183,7 @@ body {
 
 ![import box from dracula-ui, add it to the JSX with style properties](screenshots/App2.png)
 
-#### Header
+#### Add a Component: Header
 
 1. Add a `components` folder with `Header.jsx`.
 
@@ -201,4 +201,56 @@ _The result so far..._
 
 ![Grocery List title](screenshots/resu1.png)
 
-#### AddItem
+#### Set Up Main Component
+
+
+
+#### Use Font Awesome Icons: AddItem
+
+1. Create the component with imports of Dracula UI and Input component. Add `Input` tag to JSX with the style attributes.
+
+![AddItem component with import of Dracula UI and Input component. Input with attributes included in the JSX](screenshots/AddItem1.png)
+
+2. Add the import line and component to `App.jsx`.
+
+![import and component added to App.jsx](screenshots/App4.png)
+
+3. Use `react-icons` from [NPMJS](https://www.npmjs.com/) to import only the icons used in this project. In your terminal, type
+
+```
+yarn add react-icons --save-prod
+```
+
+Then verify it in `package.json`.
+![react-icons version 4.6.0 in our dependencies](screenshots/json1.png)
+
+4. _Optional:_ Go to [Font Awesome](https://fontawesome.com/search) to search for `plus`. Make sure to click the _Free_ tab.
+
+5. In `AddItem.jsx` and add `import { FaPlus } from 'react-icons/fa'` to the top of the file.
+
+6. Because we have more than one item in the JSX, add the `<div className="inputBlock"></div>` tags to enclose `<Input>` and the button.
+
+7. Add `FaPlus` just like a component, with attributes to add it's `role` and `tabIndex`.
+
+![import icon as FaPlus, add containing tags, add icon as component](screenshots/AddItem2.png)
+
+8. Over in `index.css`, put `flex` on our `inputBlock` class.
+
+![centering input and button with flexbox](screenshots/css1.png)
+
+#### Set up State: AddItem
+
+1. In `App.jsx`, import `useState` on _line 6_.
+
+2. Set the state... **XXXXXXX**
+
+![import useState from react and destructuring useState](screenshots/App5.png)
+
+> I just noticed that I had `Header` as my export function in `AddItem.jsx`, so interesting that I was able to use it in `App.jsx` as `<AddItem />` - the correct name!
+> ![change function name to AddItem](screenshots/err1.png)
+
+3. Pass the props to `AddItem.jsx`, remembering to place them in **curly brackets**.
+
+![pass newItem and setNewItem into the function](screenshots/AddItem3.png)
+
+
