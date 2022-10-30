@@ -208,6 +208,12 @@ _The result so far..._
 
 ![Grocery List title](screenshots/resu1.png)
 
+#### Set Default List: ItemList
+
+1. I set up a default list of grocery items to get the list started. This goes within the `App` function and before returning the JSX.
+
+![destructured items, setItems for array of objects in useState with id, checked and item properties](screenshots/App6.png)
+
 #### Use Font Awesome Icons: AddItem
 
 1. Create the component with imports of Dracula UI and Input component. Add `Input` tag to JSX with the style attributes.
@@ -245,7 +251,7 @@ Then verify it in `package.json`.
 
 1. In `App.jsx`, import `useState` on _line 6_.
 
-2. Set the state... **XXXXXXX**
+2. Handle the **state** to immediately _react_ to changes our user makes in the input. Define the what's used in state, `newItem` and `setNewItem`, using the **array destructuring** from `useState`.
 
 ![import useState from react and destructuring useState](screenshots/App5.png)
 

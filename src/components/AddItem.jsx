@@ -10,7 +10,8 @@ export default function AddItem({ newItem, setNewItem, handleSubmit }) {
         color="pink"
         variant="outline"
         borderSize="md"
-        m="xs"
+        my="xs"
+        mr='xs'
         size="lg"
         autoFocus
         id="addItem"
