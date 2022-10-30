@@ -59,6 +59,7 @@ form svg {
 
 svg {
   font-size: 1.35rem;
+  cursor: pointer;
 }
 
 svg:hover,
