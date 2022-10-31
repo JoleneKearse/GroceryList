@@ -210,7 +210,9 @@ _The result so far..._
 
 ![Grocery List title](screenshots/resu1.png)
 
-### Set Default List: ItemList
+### ItemList
+
+#### Set Up A Default List
 
 > I got ahead of myself here and jumped straight to **`AddItem`**, but it does make more sense to start with a static list.
 
@@ -268,7 +270,20 @@ import { FaTrashAlt } from "react-icons/fa";
 
 ![List component with map function creating each list item including a checkbox, label, and trash icon](screenshots/ItemList1.png)
 
-10. **Style** it! Much of this could be done through Dracula UI including: `py`, `pb`, `size` on `List` and `li`, and `color` on `Checkbox`.
+#### Style with Dracula UI In-Builts or CSS
+
+1. Style it! Much of this could be done through Dracula UI including: `py`, `pb`, `size` on `List` and `li`, and `color` on `Checkbox`.
+
+2. Some were easier to control with regular CSS, like `font-size` and hover/focus effects. The icons can be targetted by the `svg` selector.
+
+3. The most complex thing was getting the item text to change colour when the li was hovered on. I had to grab the class name from the DevTools.
+
+```css
+li.item:hover .drac-text,
+li.item:focus .drac-text {
+  color: #ff80bf;
+}
+```
 
 ### Use Font Awesome Icons: AddItem
 
