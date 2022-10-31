@@ -16,7 +16,9 @@ This is a _test_ app for me; I'm coding from memory with minimal checks of my no
 This is a relatively simple Grocery List App. It can:
 
 - Add new items to the list either by pressing `Enter` or clicking the plus button
--
+- Display current items with the ability to check them off and delete.
+- A count of remaining items in the list
+- Search ability
 
 ## The Process
 
@@ -163,7 +165,7 @@ Let's take advantage of the **in-editor docs** and **autocomplete** function in 
 
 ![select CSS and React code snippets](screenshots/drac6.png)
 
-### On to the Code!
+## On to the Code!
 
 1. In the `src` folder, add a new file called capital `App.jsx`.
 
@@ -190,7 +192,7 @@ body {
 
 ![import box from dracula-ui, add it to the JSX with style properties](screenshots/App2.png)
 
-#### Add a Component: Header
+### Add a Component: Header
 
 1. Add a `components` folder with `Header.jsx`.
 
@@ -208,13 +210,28 @@ _The result so far..._
 
 ![Grocery List title](screenshots/resu1.png)
 
-#### Set Default List: ItemList
+### Set Default List: ItemList
 
-1. I set up a default list of grocery items to get the list started. This goes within the `App` function and before returning the JSX.
+> I got ahead of myself here and jumped straight to **`AddItem`**, but it does make more sense to start with a static list.
+
+1. Create an `ItemList` component. Import it in `App.jsx` and add the component in the returned JSX:
+
+```js
+return (
+  <Box>
+    <Header />
+    <ItemList />
+  </Box>
+);
+```
+
+2. Set up a default list of grocery items to get the list started. This goes within the `ItemList` function and before returning the JSX.
 
 ![destructured items, setItems for array of objects in useState with id, checked and item properties](screenshots/App6.png)
 
-#### Use Font Awesome Icons: AddItem
+> Add to `ItemList.jsx`, even though it may be moved later on to `App.jsx`.
+
+### Use Font Awesome Icons: AddItem
 
 1. Create the component with imports of Dracula UI and Input component. Add `Input` tag to JSX with the style attributes.
 
@@ -227,7 +244,9 @@ _The result so far..._
 3. Use `react-icons` from [NPMJS](https://www.npmjs.com/) to import only the icons used in this project. In your terminal, type
 
 ```
+
 yarn add react-icons --save-prod
+
 ```
 
 Then verify it in `package.json`.
@@ -261,3 +280,7 @@ Then verify it in `package.json`.
 3. Pass the props to `AddItem.jsx`, remembering to place them in **curly brackets**.
 
 ![pass newItem and setNewItem into the function](screenshots/AddItem3.png)
+
+```
+
+```
