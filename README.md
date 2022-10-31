@@ -20,9 +20,26 @@ This is a relatively simple Grocery List App. It can:
 - A count of remaining items in the list
 - Search ability
 
+## Table of Contents
+
+- [The Process](https://github.com/JoleneKearse/GroceryList#the-process)
+- [Add the Dependencies]()
+  - [Set Up the Project](https://github.com/JoleneKearse/GroceryList#set-up-the-project)
+  - [Spin Up the Servers](https://github.com/JoleneKearse/GroceryList#spin-up-the-servers)
+  - [Use Dracula Ui](https://github.com/JoleneKearse/GroceryList#use-dracula-ui)
+- [On to the Code!](https://github.com/JoleneKearse/GroceryList#on-to-the-code)
+  - [Add a Component: Header](https://github.com/JoleneKearse/GroceryList#add-a-component-header)
+  - [ItemList](https://github.com/JoleneKearse/GroceryList#itemlist)
+    - [Set Up a Default List](https://github.com/JoleneKearse/GroceryList#set-up-a-default-list)
+    - [Style with Dracula UI and CSS]()
+  - [Use Font Awesome Icons: AddItem](https://github.com/JoleneKearse/GroceryList#use-font-awesome-icons-additem)
+    - [Set Up State](https://github.com/JoleneKearse/GroceryList#set-up-state-additem)
+
 ## The Process
 
 I'm working in **VS Code** on a **Windows 11** computer, so all shortcuts I use are for those. I'm using the **ES7+ React/Redux/React-Native snippets** extension.
+
+## Add the Dependencies
 
 ### Set Up the Project
 
@@ -270,7 +287,7 @@ import { FaTrashAlt } from "react-icons/fa";
 
 ![List component with map function creating each list item including a checkbox, label, and trash icon](screenshots/ItemList1.png)
 
-#### Style with Dracula UI In-Builts or CSS
+#### Style with Dracula UI or CSS
 
 1. Style it! Much of this could be done through Dracula UI including: `py`, `pb`, `size` on `List` and `li`, and `color` on `Checkbox`.
 
