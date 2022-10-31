@@ -302,6 +302,12 @@ li.item:focus .drac-text {
 }
 ```
 
+#### Handle Checks
+
+1. Set up the `handleCheck` function to take in the `id`. Create a `listItems` variable to **map over** each item: checking if it has the clicked **id**, and if so create a **new array so we don't directly change the state** and flip that item's checked value. Then we set the items to the updated state.
+
+![handleCheck function mapping over items in listItems to check id, create a new array, then change checked value](screenshots/ItemList2.png)
+
 ### Use Font Awesome Icons: AddItem
 
 1. Create the component with imports of Dracula UI and Input component. Add `Input` tag to JSX with the style attributes.

@@ -17,7 +17,7 @@ export default function App() {
       <Header />
       <AddItem />
       <ItemList />
-      <Footer />
+      {/* <Footer /> */}
     </Box>
   );
 }
