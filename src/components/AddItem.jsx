@@ -23,8 +23,8 @@ export default function AddItem({ newItem, setNewItem, handleSubmit }) {
       <FaPlus
         role="button"
         tabIndex="0"
-        stoke="purple"
-        fill='pink' />
+        stoke="#9580ff"
+        fill='#ff80bf' />
     </form>
   );
 }

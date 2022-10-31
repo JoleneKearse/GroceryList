@@ -216,7 +216,7 @@ _The result so far..._
 
 1. Create an `ItemList` component. Import it in `App.jsx` and add the component in the returned JSX:
 
-```js
+```jsx
 return (
   <Box>
     <Header />
@@ -225,11 +225,50 @@ return (
 );
 ```
 
-2. Set up a default list of grocery items to get the list started. This goes within the `ItemList` function and before returning the JSX.
+2. Set up a default list of grocery items to get the list started. This goes within the `ItemList` function and before returning the JSX. Include the import statement:
+
+```js
+import { useState } from "react";
+```
+
+Set the list as a `const` with **destructuring** of `items` and `setItems` equal to `useState()` with an **array of objects**.
 
 ![destructured items, setItems for array of objects in useState with id, checked and item properties](screenshots/App6.png)
 
 > Add to `ItemList.jsx`, even though it may be moved later on to `App.jsx`.
+
+3. Include two more import statements for our Dracula UI components and Font Awesome icon:
+
+```js
+import { List, Checkbox } from "dracula-ui";
+import { FaTrashAlt } from "react-icons/fa";
+```
+
+4. Have the `ItemList` function return a `<List>` component from **Dracula UI**.
+
+5. Get ready to have lots of fun creating the `<li>`s! Use `.map()` on `items` created on _line 8_. This will go over each `item`, creating the JSX.
+
+```jsx
+{items.map((item) => (...))}
+```
+
+6. Create an `<li>` with a couple important attributes to enclose each line.
+
+```jsx
+<li className="item" key={item.id}>
+  ...
+</li>
+```
+
+7. Use the Dracula UI checkbox component passing all the properties _(pictured below)_.
+
+8. Use the `label` as the actual item to display. _Don't worry, I'll go over all that's going on there later!_
+
+9. Add the **Font Awesome** trash can icon.
+
+![List component with map function creating each list item including a checkbox, label, and trash icon](screenshots/ItemList1.png)
+
+10. **Style** it! Much of this could be done through Dracula UI including: `py`, `pb`, `size` on `List` and `li`, and `color` on `Checkbox`.
 
 ### Use Font Awesome Icons: AddItem
 

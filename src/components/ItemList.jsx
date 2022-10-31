@@ -54,8 +54,8 @@ export default function ItemList() {
           >{item.item}</label>
           <FaTrashAlt
             role="button"
-            stoke="purple"
-            fill='pink'
+            stoke="#9580ff"
+            fill='#ff80bf'
           />
         </li>
       ))}
