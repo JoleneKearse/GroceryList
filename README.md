@@ -38,7 +38,7 @@ This is a relatively simple Grocery List App. It can:
 
 ## The Process
 
-I'm working in **VS Code** on a **Windows 11** computer, so all shortcuts I use are for those. I'm using the **ES7+ React/Redux/React-Native snippets** extension.
+I'm working in **VS Code** on a **Windows 11** computer, so all shortcuts I use are for those. I'm also using the **ES7+ React/Redux/React-Native snippets** extension.
 
 ## Add the Dependencies
 
@@ -305,7 +305,7 @@ li.item:focus .drac-text {
 
 #### Handle Checks
 
-1. Set up the `handleCheck` function to take in the `id`. Create a `listItems` variable to **map over** each item: checking if it has the clicked **id**, and if so create a **new array so we don't directly change the state** and flip that item's checked value. Then we set the items to the updated state.
+1. Set up the `handleCheck` function to take in the `id`. Create a `listItems` variable to **map over** each item: checking if it is the clicked **id**, if so create a **new array so we don't directly change the state** and flip that item's checked value. Then we set the items to the updated state.
 
 ![handleCheck function mapping over items in listItems to check id, create a new array, then change checked value](screenshots/ItemList2.png)
 
