@@ -257,6 +257,16 @@ Set the list as a `const` with **destructuring** of `items` and `setItems` equal
 
 > Add to `ItemList.jsx`, even though it may be moved later on to `App.jsx`.
 
+> #### Use Font Awesome Icons
+>
+> 1. Use `react-icons` from [NPMJS](https://www.npmjs.com/) to import only the icons used in this project. In your terminal, type
+>    `yarn add react-icons --save-prod`
+>    Then verify it in `package.json`.
+>    ![react-icons version 4.6.0 in our dependencies](screenshots/json1.png)
+> 2. _Optional:_ Go to [Font Awesome](https://fontawesome.com/search) to search for `plus`. Make sure to click the _Free_ tab.
+> 3. Add the import statement to the top of the component where it will be used. Like `import { Fa< name of icon >} from "react-icons/fa";`
+> 4. Add to the JSX just like a component - `<FaCheck>`.
+
 3. Include two more import statements for our Dracula UI components and Font Awesome icon:
 
 ```js
@@ -284,7 +294,7 @@ import { FaTrashAlt } from "react-icons/fa";
 
 8. Use the `label` as the actual item to display. _Don't worry, I'll go over all that's going on there later!_
 
-9. Add the **Font Awesome** trash can icon.
+9. Add the **Font Awesome** trash can icon on _line 55_.
 
 ![List component with map function creating each list item including a checkbox, label, and trash icon](screenshots/ItemList1.png)
 
@@ -309,7 +319,13 @@ li.item:focus .drac-text {
 
 ![handleCheck function mapping over items in listItems to check id, create a new array, then change checked value](screenshots/ItemList2.png)
 
-### Use Font Awesome Icons: AddItem
+2. Set up **conditional styling** to add a line through the item. To the `label` tag, add a `style` attribution with curly brackets, `{ }` so we can use a **ternary operator** to only apply the rule when the item has been checked.
+
+![style attribute checking if item checked and applying a line through text decoration or nothing](screenshots/ItemList3.png)
+
+3. Improve UX by adding a **double click event** on the item to trigger `handleCheck` like on _line 51_ above.
+
+### `AddItem` Component
 
 1. Create the component with imports of Dracula UI and Input component. Add `Input` tag to JSX with the style attributes.
 
@@ -318,19 +334,6 @@ li.item:focus .drac-text {
 2. Add the import line and component to `App.jsx`.
 
 ![import and component added to App.jsx](screenshots/App4.png)
-
-3. Use `react-icons` from [NPMJS](https://www.npmjs.com/) to import only the icons used in this project. In your terminal, type
-
-```
-
-yarn add react-icons --save-prod
-
-```
-
-Then verify it in `package.json`.
-![react-icons version 4.6.0 in our dependencies](screenshots/json1.png)
-
-4. _Optional:_ Go to [Font Awesome](https://fontawesome.com/search) to search for `plus`. Make sure to click the _Free_ tab.
 
 5. In `AddItem.jsx` and add `import { FaPlus } from 'react-icons/fa'` to the top of the file.
 
