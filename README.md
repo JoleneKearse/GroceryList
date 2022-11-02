@@ -35,7 +35,7 @@ This is **Grocery List App** can:
     - [Use Font Awesome Icons](https://github.com/JoleneKearse/GroceryList#use-font-awesome-icons)
     - [HandleChecks](https://github.com/JoleneKearse/GroceryList#handle-checks)
   - [`AddItem` Component](https://github.com/JoleneKearse/GroceryList#additem-component)
-    - [Set Up State](https://github.com/JoleneKearse/GroceryList#set-up-state-additem)
+    - [Set Up State](https://github.com/JoleneKearse/GroceryList#set-the-state)
 
 ## The Process
 
@@ -391,6 +391,7 @@ li.item:focus .drac-text {
 ![import useState from react and destructuring useState](screenshots/App5.png)
 
 > I just noticed that I had `Header` as my export function in `AddItem.jsx`, so interesting that I was able to use it in `App.jsx` as `<AddItem />` - the correct name!
+
 > ![change function name to AddItem](screenshots/err1.png)
 
 3. Pass the props to `AddItem.jsx`, remembering to place them in **curly brackets**.
