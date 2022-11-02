@@ -26,6 +26,13 @@ export default function ItemList() {
   const handleCheck = (id) => {
     const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
     setItems(listItems);
+    localStorage.setItem("shoppinglist", JSON.stringify(listItems));
+  }
+
+  const handleDelete = (id) => {
+    const listItems = items.filter((item) => item.id !== id);
+    setItems(listItems);
+    localStorage.setItem("shoppinglist", JSON.stringify(listItems));
   }
 
   return (
@@ -42,19 +49,20 @@ export default function ItemList() {
             checked={item.checked}
             color="purple"
             defaultChecked={false}
-            className='.drac-mr-lg'
+            className=".drac-mr-lg"
             onChange={(() => handleCheck(item.id))}
           />
           <label
-            htmlFor='normal'
-            className='drac-text drac-text-white drac-ml-md'
+            htmlFor="normal"
+            className="drac-text drac-text-white drac-ml-md"
             onDoubleClick={() => handleCheck(item.id)}
-            style={(item.checked) ? { textDecoration: 'line-through' } : null}
+            style={(item.checked) ? { textDecoration: "line-through" } : null}
           >{item.item}</label>
           <FaTrashAlt
+            onClick={() => handleDelete(item.id)}
             role="button"
             stoke="#9580ff"
-            fill='#ff80bf'
+            fill="#ff80bf"
           />
         </li>
       ))}

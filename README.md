@@ -356,6 +356,24 @@ li.item:focus .drac-text {
 
 3. Improve UX by adding a **double click event** on the item to trigger `handleCheck` like on _line 51_ above.
 
+4. _This is an intermediate step, to be changed later._ To have the app store the user changes, add this line to the function:
+
+```jsx
+localStorage.setItem("shoppinglist", JSON.stringify(listItems));
+```
+
+This saves the state to **local storage**.
+
+#### Handle Delete
+
+1. Add an `onClick` event to the **trash can icon** and use an **anonymous function** so we can pass in the **item's id**.
+
+![on click event added to delete button calling the handleDelete function with id passed in](screenshots/ItemList4.png)
+
+2. Write the function which will create an array of only the items not matching that `id`, set the state, and save to `localStorage`.
+
+![handle delete function creating a new list items variable filtering out the clicked item, setting state and saving to local storage](screenshots/ItemList5.png)
+
 ### `AddItem` Component
 
 [top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
