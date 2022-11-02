@@ -9,34 +9,37 @@
    <img src="https://img.shields.io/badge/Yarn-2C8EBB.svg?style=for-the-badge&logo=Yarn&logoColor=white" title="Yarn" alt="Yarn">
 </p>
 
-This is a _test_ app for me; I'm coding from memory with minimal checks of my notes. I notice that I didn't put the notes in one central place, so I'll be documenting the process.
+This is a _test_ app for me; I'm coding from memory with minimal checks of my notes. My aim is to gain a greater understanding of state and practice using memory. I notice that I didn't put the notes in one central place, so I'll be documenting the process.
 
 ## MVP
 
-This is a relatively simple Grocery List App. It can:
+This is **Grocery List App** can:
 
 - Add new items to the list either by pressing `Enter` or clicking the plus button
-- Display current items with the ability to check them off and delete.
+- Display current items with the ability to check them off and delete
 - A count of remaining items in the list
 - Search ability
 
 ## Table of Contents
 
 - [The Process](https://github.com/JoleneKearse/GroceryList#the-process)
-- [Add the Dependencies]()
+- [Add the Dependencies](https://github.com/JoleneKearse/GroceryList#add-the-dependencies)
   - [Set Up the Project](https://github.com/JoleneKearse/GroceryList#set-up-the-project)
   - [Spin Up the Servers](https://github.com/JoleneKearse/GroceryList#spin-up-the-servers)
   - [Use Dracula Ui](https://github.com/JoleneKearse/GroceryList#use-dracula-ui)
 - [On to the Code!](https://github.com/JoleneKearse/GroceryList#on-to-the-code)
-  - [Add a Component: Header](https://github.com/JoleneKearse/GroceryList#add-a-component-header)
+  - [Add a Component: `Header`](https://github.com/JoleneKearse/GroceryList#add-a-component-header)
   - [ItemList](https://github.com/JoleneKearse/GroceryList#itemlist)
     - [Set Up a Default List](https://github.com/JoleneKearse/GroceryList#set-up-a-default-list)
     - [Style with Dracula UI and CSS](https://github.com/JoleneKearse/GroceryList#style-with-dracula-ui-or-css)
+    - [Use Font Awesome Icons](https://github.com/JoleneKearse/GroceryList#use-font-awesome-icons)
     - [HandleChecks](https://github.com/JoleneKearse/GroceryList#handle-checks)
-  - [Use Font Awesome Icons: AddItem](https://github.com/JoleneKearse/GroceryList#use-font-awesome-icons-additem)
+  - [`AddItem` Component](https://github.com/JoleneKearse/GroceryList#additem-component)
     - [Set Up State](https://github.com/JoleneKearse/GroceryList#set-up-state-additem)
 
 ## The Process
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 I'm working in **VS Code** on a **Windows 11** computer, so all shortcuts I use are for those. I'm also using the **ES7+ React/Redux/React-Native snippets** extension.
 
@@ -79,6 +82,8 @@ yarn create vite
 
    ![file structure](screenshots/setup4.png)
 
+   > I later moved README and screenshots folder up one level.
+
    And the message that the scaffolding is complete.
 
    ![complete message](screenshots/setup5.png)
@@ -95,9 +100,11 @@ yarn
 
 Super-fast success is proven with the `node_modules` folder being added to our file structure and this command line message:
 
-![](screenshots/setup7.png)
+![node modules in the file structure and cli messages](screenshots/setup7.png)
 
 ### Spin Up the Servers
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 1. Start the development server on your computer with
 
@@ -123,9 +130,11 @@ You will get
 
 ![server options](screenshots/server3.png)
 
-Type the network address, then you can check out your changes on desktop and/or mobile!
+Type the network address (_the one with all the numbers_), then you can check out your changes on desktop and/or mobile!
 
 ### Rid Ourselves of the Boilerplate
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 Now it's time to get rid of the defaults!
 
@@ -146,6 +155,8 @@ rm src/App.css
 ![delete the css import on line 4](screenshots/boilerplate1.png)
 
 ### Use Dracula UI
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 ![Dracula UI possibilities](screenshots/drac1.png)
 
@@ -185,7 +196,9 @@ Let's take advantage of the **in-editor docs** and **autocomplete** function in 
 
 ## On to the Code!
 
-1. In the `src` folder, add a new file called capital `App.jsx`.
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
+
+1. In the `src` folder, add a new file called (_capital!_) `App.jsx`.
 
 2. Create a exported function component called `App`.
 
@@ -206,15 +219,17 @@ body {
 }
 ```
 
-6. Import the `Box` component from Dracula UI and style it up with colour, margin, padding, rounded and width properties special to the Design System.
+6. Import the `Box` component from Dracula UI, add it to our App JSX and style it up with colour, margin, padding, rounded and width properties special to the Design System.
 
 ![import box from dracula-ui, add it to the JSX with style properties](screenshots/App2.png)
 
-### Add a Component: Header
+### Add a Component: `Header`
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 1. Add a `components` folder with `Header.jsx`.
 
-2. Import Heading from Dracula UI on _line 2_.
+2. Import **Heading** from Dracula UI on _line 2_.
 
 3. Add the inline styles.
 
@@ -230,7 +245,11 @@ _The result so far..._
 
 ### ItemList
 
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
+
 #### Set Up A Default List
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 > I got ahead of myself here and jumped straight to **`AddItem`**, but it does make more sense to start with a static list.
 
@@ -245,7 +264,7 @@ return (
 );
 ```
 
-2. Set up a default list of grocery items to get the list started. This goes within the `ItemList` function and before returning the JSX. Include the import statement:
+2. Set up a default list of grocery items to get the list started. This goes within the `ItemList` function and before returning the JSX. Include the following import statement:
 
 ```js
 import { useState } from "react";
@@ -257,15 +276,23 @@ Set the list as a `const` with **destructuring** of `items` and `setItems` equal
 
 > Add to `ItemList.jsx`, even though it may be moved later on to `App.jsx`.
 
+<hr>
+
 > #### Use Font Awesome Icons
+>
+> [top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 >
 > 1. Use `react-icons` from [NPMJS](https://www.npmjs.com/) to import only the icons used in this project. In your terminal, type
 >    `yarn add react-icons --save-prod`
 >    Then verify it in `package.json`.
->    ![react-icons version 4.6.0 in our dependencies](screenshots/json1.png)
+
+> ![react-icons version 4.6.0 in our dependencies](screenshots/json1.png)
+
 > 2. _Optional:_ Go to [Font Awesome](https://fontawesome.com/search) to search for `plus`. Make sure to click the _Free_ tab.
 > 3. Add the import statement to the top of the component where it will be used. Like `import { Fa< name of icon >} from "react-icons/fa";`
 > 4. Add to the JSX just like a component - `<FaCheck>`.
+
+<hr>
 
 3. Include two more import statements for our Dracula UI components and Font Awesome icon:
 
@@ -300,11 +327,13 @@ import { FaTrashAlt } from "react-icons/fa";
 
 #### Style with Dracula UI or CSS
 
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
+
 1. Style it! Much of this could be done through Dracula UI including: `py`, `pb`, `size` on `List` and `li`, and `color` on `Checkbox`.
 
-2. Some were easier to control with regular CSS, like `font-size` and hover/focus effects. The icons can be targetted by the `svg` selector.
+2. Some were easier to control with regular CSS, like `font-size` and **hover/focus effects**. The **icons** can be targetted by the `svg` selector.
 
-3. The most complex thing was getting the item text to change colour when the li was hovered on. I had to grab the class name from the DevTools.
+3. The most complex thing was getting the item text to change colour when the li was hovered on. I had to grab the class name using **DevTools**.
 
 ```css
 li.item:hover .drac-text,
@@ -315,7 +344,9 @@ li.item:focus .drac-text {
 
 #### Handle Checks
 
-1. Set up the `handleCheck` function to take in the `id`. Create a `listItems` variable to **map over** each item: checking if it is the clicked **id**, if so create a **new array so we don't directly change the state** and flip that item's checked value. Then we set the items to the updated state.
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
+
+1. Set up the `handleCheck` function to take in the `id`. Create a `listItems` variable to **map over** each item: checking if it is the clicked **id**, if so create a **new array so we don't directly change the state** and then flip that item's checked value. After **set the items to the updated state**.
 
 ![handleCheck function mapping over items in listItems to check id, create a new array, then change checked value](screenshots/ItemList2.png)
 
@@ -326,6 +357,8 @@ li.item:focus .drac-text {
 3. Improve UX by adding a **double click event** on the item to trigger `handleCheck` like on _line 51_ above.
 
 ### `AddItem` Component
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 1. Create the component with imports of Dracula UI and Input component. Add `Input` tag to JSX with the style attributes.
 
@@ -339,7 +372,7 @@ li.item:focus .drac-text {
 
 6. Because we have more than one item in the JSX, add the `<div className="inputBlock"></div>` tags to enclose `<Input>` and the button.
 
-7. Add `FaPlus` just like a component, with attributes to add it's `role` and `tabIndex`.
+7. Add `FaPlus` with attributes to add it's `role` and `tabIndex`.
 
 ![import icon as FaPlus, add containing tags, add icon as component](screenshots/AddItem2.png)
 
@@ -347,7 +380,9 @@ li.item:focus .drac-text {
 
 ![centering input and button with flexbox](screenshots/css1.png)
 
-#### Set up State: AddItem
+#### Set the State
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 1. In `App.jsx`, import `useState` on _line 6_.
 
