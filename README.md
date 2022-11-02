@@ -31,7 +31,8 @@ This is a relatively simple Grocery List App. It can:
   - [Add a Component: Header](https://github.com/JoleneKearse/GroceryList#add-a-component-header)
   - [ItemList](https://github.com/JoleneKearse/GroceryList#itemlist)
     - [Set Up a Default List](https://github.com/JoleneKearse/GroceryList#set-up-a-default-list)
-    - [Style with Dracula UI and CSS]()
+    - [Style with Dracula UI and CSS](https://github.com/JoleneKearse/GroceryList#style-with-dracula-ui-or-css)
+    - [HandleChecks](https://github.com/JoleneKearse/GroceryList#handle-checks)
   - [Use Font Awesome Icons: AddItem](https://github.com/JoleneKearse/GroceryList#use-font-awesome-icons-additem)
     - [Set Up State](https://github.com/JoleneKearse/GroceryList#set-up-state-additem)
 
