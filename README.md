@@ -374,6 +374,26 @@ This saves the state to **local storage**.
 
 ![handle delete function creating a new list items variable filtering out the clicked item, setting state and saving to local storage](screenshots/ItemList5.png)
 
+### Add Empty List Message
+
+1. Add `<>` and `</>` tags as the first item, then tab everything over. This is needed because we will use a ternary operator on `<List>`.
+
+2. Next indentation over begin the ternary with `{items.length ? (`, then **cut** the `)}` - to be added afterwards. In essence, this is saying if there are items, then proceed with all the existing code.
+
+3. Tab all the code over.
+
+4. After the closing `</List>` tag and **one indentation in**, continue the ternary. Add a `<p>` tag with a style expression and our message.
+
+5. Paste the `)}` to close out the ternary operator.
+
+6. One indent **in** add the closing fragment, `</>`.
+
+7. Close the **return statement** and **function**.
+
+![end of the ternary operation, JSX, and function](screenshots/ItemList6.png)
+
+> **Note**: I had quite the difficult time finding exactely which bracket (rounded, curly) was wrong. I've included a [copy of the code] up to this state to compare. I suggest using [DiffChecker](https://www.diffchecker.com/#) to compare. It's so easy to make a single, critical mistake here! 😭
+
 ### `AddItem` Component
 
 [top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
