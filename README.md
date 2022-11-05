@@ -392,7 +392,7 @@ This saves the state to **local storage**.
 
 ![end of the ternary operation, JSX, and function](screenshots/ItemList6.png)
 
-> **Note**: I had quite the difficult time finding exactely which bracket (rounded, curly) was wrong. I've included a [copy of the code] up to this state to compare. I suggest using [DiffChecker](https://www.diffchecker.com/#) to compare. It's so easy to make a single, critical mistake here! 😭
+> **Note**: I had quite the difficult time finding exactely which bracket (rounded, curly) was wrong. I've included a [copy of the code](https://github.com/JoleneKearse/GroceryList/blob/main/screenshots/sampleEmptyItemListMsg.jsx) up to this state to compare. I suggest using [DiffChecker](https://www.diffchecker.com/#) to compare. It's so easy to make a single, critical mistake here! 😭
 
 ### `AddItem` Component
 
