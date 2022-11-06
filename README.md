@@ -374,7 +374,7 @@ This saves the state to **local storage**.
 
 ![handle delete function creating a new list items variable filtering out the clicked item, setting state and saving to local storage](screenshots/ItemList5.png)
 
-### Add Empty List Message
+#### Add Empty List Message
 
 1. Add `<>` and `</>` tags as the first item, then tab everything over. This is needed because we will use a ternary operator on `<List>`.
 
@@ -397,6 +397,32 @@ This saves the state to **local storage**.
 ![end of the ternary operation, JSX, and function](screenshots/ItemList6.png)
 
 > **Note**: I had quite the difficult time finding exactely which bracket (rounded, curly) was wrong. I've included a [copy of the code](https://github.com/JoleneKearse/GroceryList/blob/main/screenshots/sampleEmptyItemListMsg.jsx) up to this state to compare. I suggest using [DiffChecker](https://www.diffchecker.com/#) to compare. It's so easy to make a single, critical mistake here! 😭
+
+### Pass **props** Down From `App` to `ItemList` Components
+
+This tells our user how many items are on their list.
+
+1. In `ItemList.jsx`, highlight the entire list variable, use `Ctrl` + `X` to cut it.
+
+2. In `App.jsx`, press `Ctrl` + `C` to copy it in the **App function**, **right above the return statement**.
+
+![destructured items variable moved from ItemList to App](screenshots/App7.png)
+
+3. Pass `items` and `setItems` down as **props** to the `ItemList` component.
+
+![items and set items passed as props down to Item List component](screenshots/App8.png)
+
+4. Repeat for `handleCheck` and `handleDelete` functions: cut and copy, and pass as props.
+
+5. Back in `ItemList.jsx`, destructure the props to gain access. Pay attention to any that are _greyedout_, like `setItems`. A quick scan shows that it isn't used in this file (only used in the functions). So you can delete it.
+
+![destructured props in Item List, with set Items greyedout](screenshots/ItemList7.gif)
+
+6. Remove `setItems={setItems}` on _line 48_ in `App.jsx`.
+
+7. Add `import { useState } from 'react';` to `App.jsx` and remove from `ItemList.jsx`.
+
+### `Footer` Componenet
 
 ### `AddItem` Component
 
