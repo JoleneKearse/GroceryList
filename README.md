@@ -520,6 +520,8 @@ This tells our user how many items are on their list.
 
 ![new function to set items and save to local storage](screenshots/App12.png)
 
+> I ran into some issues with _line 39_ with adding an `id`, so I switched to using [uuidv4](https://www.robinwieruch.de/react-add-item-to-list/). Add to dependencies with the CLI command `yarn add uuidv4`, import in `App.jsx` with `import { v4 as uuidv4 } from 'uuid';`, then call it in the `addItem` function with `const id = uuidv4()`. This is actually a more secure method!
+
 23. Finish up the `handleSubmit` function.
 
 ![add add Item function call to handle submit](screenshots/App13.png)

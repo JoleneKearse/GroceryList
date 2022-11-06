@@ -12,7 +12,7 @@ export default function ListLi({ items, handleCheck, handleDelete }) {
       {items.map((item) => (
         <li
           className="item"
-          key={item.id}
+          // key={item.id}
           py="sm"
           pb="sm"
         >

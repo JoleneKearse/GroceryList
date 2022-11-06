@@ -7,6 +7,7 @@ import SearchItem from './components/SearchItem';
 import ItemList from './components/ItemList';
 import Footer from './components/Footer';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 
 export default function App() {
@@ -21,9 +22,10 @@ export default function App() {
 
   const addItem = (item) => {
     // increment item id or set it as 1
-    const id = items.length ? items[items.length - 1] + 1 : 1;
+    const id = uuidv4();
+    console.log(id)
     // create new item object
-    const nextNewItem = { id, checked: false, item };
+    const nextNewItem = { id: id, checked: false, item };
     // create new array to update state
     const listItems = [...items, nextNewItem];
     setAndSaveItems(listItems);

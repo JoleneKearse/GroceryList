@@ -8,15 +8,15 @@ export default function ItemList({ items, handleCheck, handleDelete }) {
     <>
       {
         items.length ? (
-          <ListLi 
-           items={items}
-           handleCheck={handleCheck}
-           handleDelete={handleDelete}
-          ></ListLi>
-        ): (
-            <Text align = "center" as = "p" style = {{ marginTop: "1.5rem" }}>Empty list.</Text>
-  )
-}
+          <ListLi
+            items={items}
+            handleCheck={handleCheck}
+            handleDelete={handleDelete}
+          />
+        ) : (
+          <Text align="center" as="p" style={{ marginTop: "1.5rem" }}>Empty list.</Text>
+        )
+      }
     </>
   )
 }

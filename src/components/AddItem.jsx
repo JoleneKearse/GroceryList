@@ -7,8 +7,8 @@ import { useRef } from 'react';
 export default function AddItem({ newItem, setNewItem, handleSubmit }) {
   const inputRef = useRef();
   return (
-    <form className='inputBlock' onSubmit={handleSubmit}>
-      <label htmlFor='addItem' className='sr-only'>Add Item</label>
+    <form className="inputBlock" onSubmit={handleSubmit}>
+      <label htmlFor="addItem" className="sr-only">Add Item</label>
       <Input
         color="pink"
         variant="outline"
