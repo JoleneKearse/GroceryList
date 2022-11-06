@@ -1,6 +1,6 @@
 import 'dracula-ui/styles/dracula-ui.css';
-import { List, Checkbox, Text } from 'dracula-ui';
-import { FaTrashAlt } from 'react-icons/fa';
+import ListLi from './ListLi';
+import { Text } from 'dracula-ui';
 
 export default function ItemList({ items, handleCheck, handleDelete }) {
 
@@ -8,46 +8,15 @@ export default function ItemList({ items, handleCheck, handleDelete }) {
     <>
       {
         items.length ? (
-          <List
-            py="sm"
-            pb="sm"
-            size="lg"
-          >
-            {items.map((item) => (
-              <li
-                className="item"
-                key={item.id}
-                py="sm"
-                pb="sm"
-              >
-                <Checkbox
-                  type="checkbox"
-                  checked={item.checked}
-                  color="purple"
-                  defaultChecked={false}
-                  className=".drac-mr-lg"
-                  onChange={(() => handleCheck(item.id))}
-                />
-                <label
-                  htmlFor="normal"
-                  className="drac-text drac-text-white drac-ml-md"
-                  onDoubleClick={() => handleCheck(item.id)}
-                  style={(item.checked) ? { textDecoration: "line-through" } : null}
-                >{item.item}</label>
-                <FaTrashAlt
-                  onClick={() => handleDelete(item.id)}
-                  role="button"
-                  tabIndex="0"
-                  stoke="#9580ff"
-                  fill="#ff80bf"
-                />
-              </li>
-            ))}
-          </List>
-        ) : (
-          <Text align="center" as="p" style={{ marginTop: "1.5rem" }}>Empty list.</Text>
-        )
-      }
+          <ListLi 
+           items={items}
+           handleCheck={handleCheck}
+           handleDelete={handleDelete}
+          ></ListLi>
+        ): (
+            <Text align = "center" as = "p" style = {{ marginTop: "1.5rem" }}>Empty list.</Text>
+  )
+}
     </>
   )
 }

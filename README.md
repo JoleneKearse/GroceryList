@@ -446,6 +446,24 @@ This tells our user how many items are on their list.
 
 ![styled Paragraph using props to show number of items and ternary expression to construct grammatically correct sentence](screenshots/Footer2.png)
 
+### Use Abstraction to Clean-up Code
+
+`ItemList.jsx` is a bit unwieldy as we had a ternary expression to display our _Empty List._ message. **But** it started on _line 10_ and went all the way until _line 49_. We can make it a lot more **readable**!
+
+1. Create a new **component** called `ListLi.jsx`.
+
+2. Look at the **parent** to copy the props and **drill** them down.
+
+3. **Cut and copy** the `<List>` from `ItemList` to `ListLi`.
+
+4. Update the **import statements** for the new component.
+
+![new List Li component file with import statements, prop drilling, and JSX](screenshots/ListLi1.png)
+
+5. Import the component into `ItemList` and add to the JSX with props.
+
+![cleaned up Item List component](screenshots/ItemList8.png)
+
 ### `AddItem` Component
 
 [top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
@@ -460,15 +478,53 @@ This tells our user how many items are on their list.
 
 5. In `AddItem.jsx` and add `import { FaPlus } from 'react-icons/fa'` to the top of the file.
 
-6. Because we have more than one item in the JSX, add the `<div className="inputBlock"></div>` tags to enclose `<Input>` and the button.
+6. Because we have more than one item in the JSX, add the `<form className="inputBlock"></form>` tags to enclose `<Input>` and the add button we will have.
 
-7. Add `FaPlus` with attributes to add it's `role` and `tabIndex`.
+7. Add a `<label>` with `sr-only` class, so it's accessible but visually hidden.
+
+8. Add the `Input` component, imported from Dracula UI, with `autoFocus`, `id`, `type`, `placeholder` and `required` attributes.
+
+9. Add `FaPlus` (with import statement on _line 3_) with attributes to add it's `role`, `tabIndex` and `aria-label`.
 
 ![import icon as FaPlus, add containing tags, add icon as component](screenshots/AddItem2.png)
 
-8. Over in `index.css`, put `flex` on our `inputBlock` class.
+10. Over in `index.css`, put `flex` on our `inputBlock` class.
 
 ![centering input and button with flexbox](screenshots/css1.png)
+
+11. Import and add the component to `App.jsx`, then set up the state with `const [newItem, setNewItem] = useState("");`.
+
+12. Pass the props to the component: `newItem`, `setNewItem`, and the `handleSubmit` function we will create.
+
+13. Add destructured props to `AddItem.jsx` on _line 5_: `export default function AddItem({ newItem, setNewItem, handleSubmit })`.
+
+14. Set the `Input` tag to be the **one source of truth** for this **controlled input** with `value={newItem}`.
+
+15. Use `onChange={(e) => setNewItem(e.target.value)}` to change the state as the user types.
+
+16. Add `onSubmit={handleSubmit}` on the `<form>` element itself.
+
+17. Back in the `handleSubmit` function in `App.jsx`, we first want to prevent the page reloading, then check if there is indeed an item to add, call the `addItem` function and set the state back to empty.
+
+![handle Submit function preventing a page reload, checking for input, calling add Item function, then clearing the state](screenshots/App11.png)
+
+18. Create the `addItem` function.
+
+19. Add the item `id` with `const id = items.length ? items[items.length - 1] + 1 : 1;`. This checks if there are items, returns the index of the item length minus 1, then increments the id, or adds an id of 1.
+
+20. Create a new item object with `const nextNewItem = { id, checked: false, item };`.
+
+21. Create a new array to update the state of the list, using the **spread operator** and adding the newly entered item: `const listItems = [...items, nextNewItem];`.
+
+22. Now we use the same code to set the new state and store it, like we already have in `handleCheck` and `handleDelete`. So we can make it DRYer with a new function to call each time.
+
+![new function to set items and save to local storage](screenshots/App12.png)
+
+23. Finish up the `handleSubmit` function.
+
+![add add Item function call to handle submit](screenshots/App13.png)
+
+24. Add `onClick={handleSubmit}` to the `<FaPlus>` tag to allow user to use both `Enter` key and button to submit.
 
 #### Set the State
 
@@ -488,6 +544,62 @@ This tells our user how many items are on their list.
 
 ![pass newItem and setNewItem into the function](screenshots/AddItem3.png)
 
-```
+### Load State from `localStorage`
 
-```
+To-date the initial grocery list items are being added from our default list, so let's fix that!
+
+1. Delete the array within `useState` on _line 12_ of `App.jsx`.
+
+2. Replace with `JSON.parse(localStorage.getItem("shoppinglist"))`.
+
+![replace the default array with local Storage](screenshots/App14.png)
+
+### Add Search Functionality
+
+1. Add a new component `SearchItem.jsx`.
+
+2. Have it return a `<form>` with a `className` and `onSubmit`.
+
+3. As this form won't have a button, we will immediately prevent page reload in the `onSubmit`.
+
+4. Add a label, like in `AddItem`.
+
+5. Import Dracula UI and the `Input` component.
+
+6. Add the `Input` tag with attributes, especially `role="searchbox"`.
+
+![Search Item component file with imports, form, label and input](screenshots/SearchItem1.png)
+
+7. Put the import statement under `AddItem` import in `App.jsx`.
+
+8. Set the state on _line 15_: `const [search, setSearch] = useState("");`.
+
+9. Add the component and props in the JSX.
+
+![Search Item component with search and set Search props](screenshots/SearchItem2.png)
+
+10. Use the wonders of Dracula UI to style it with a just 6 more attributes on the `Input` tag in `SearchItem.jsx`.
+
+![style attributes](screenshots/SearchItem3.png)
+
+11. Now link it to the state. Add the destructured props to `SearchItem`.
+
+12. Add the reference to the props to `Input`.
+
+![value and on Change](screenshots/SearchItem4.png)
+
+13. Filter the items in `App.jsx` on _line 65_ by changing the expression: `items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}`.
+
+### Add a Hook to Shift Focus
+
+Currently, when the user uses the Plus Button to add an item, the focus stays there.
+
+![focus on plus button after use](screenshots/resu2.png)
+
+1. Import `useRef` in `AddItem.jsx` on _line 4_. 
+
+2. Add it as a variable on _line 7_.
+
+3. Add a `ref` attribute to `Input` on _line 20_.
+
+4. Send the focus back

@@ -3,52 +3,70 @@ import './styles/index.css';
 import { Box } from 'dracula-ui';
 import Header from './components/Header';
 import AddItem from './components/AddItem';
+import SearchItem from './components/SearchItem';
 import ItemList from './components/ItemList';
 import Footer from './components/Footer';
 import { useState } from 'react';
 
 
 export default function App() {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "Ginger Ale sparking water"
-    },
-    {
-      id: 2,
-      checked: false,
-      item: "Black Diamond cheese sticks"
-    },
-    {
-      id: 3,
-      checked: false,
-      item: "Olive Tempanade hummus"
-    }
-  ]);
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem("shoppinglist")));
+  const [newItem, setNewItem] = useState("");
+  const [search, setSearch] = useState("");
+
+  const setAndSaveItems = (newItems) => {
+    setItems(newItems);
+    localStorage.setItem("shoppinglist", JSON.stringify(newItems));
+  }
+
+  const addItem = (item) => {
+    // increment item id or set it as 1
+    const id = items.length ? items[items.length - 1] + 1 : 1;
+    // create new item object
+    const nextNewItem = { id, checked: false, item };
+    // create new array to update state
+    const listItems = [...items, nextNewItem];
+    setAndSaveItems(listItems);
+  }
 
   const handleCheck = (id) => {
     const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
-    setItems(listItems);
-    localStorage.setItem("shoppinglist", JSON.stringify(listItems));
+    setAndSaveItems(listItems);
   }
 
   const handleDelete = (id) => {
     const listItems = items.filter((item) => item.id !== id);
-    setItems(listItems);
-    localStorage.setItem("shoppinglist", JSON.stringify(listItems));
+    setAndSaveItems(listItems);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // check that there is something to submit
+    if (!newItem) return;
+    // addItem
+    addItem(newItem);
+    // set state back to empty
+    setNewItem("");
   }
 
   return (
     <Box color='blackSecondary' m='lg' p='md' rounded='lg' width='md'>
       <Header />
-      <AddItem />
+      <AddItem
+        newItem={newItem}
+        setNewItem={setNewItem}
+        handleSubmit={handleSubmit}
+      />
+      <SearchItem
+        search={search}
+        setSearch={setSearch}
+      />
       <ItemList
-        items={items}
+        items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
-      <Footer length={items.length}/>
+      <Footer length={items.length} />
     </Box>
   );
 }
