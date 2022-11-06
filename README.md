@@ -598,10 +598,28 @@ Currently, when the user uses the Plus Button to add an item, the focus stays th
 
 ![focus on plus button after use](screenshots/resu2.png)
 
-1. Import `useRef` in `AddItem.jsx` on _line 4_. 
+1. Import `useRef` in `AddItem.jsx` on _line 4_.
 
 2. Add it as a variable on _line 7_.
 
 3. Add a `ref` attribute to `Input` on _line 20_.
 
-4. Send the focus back
+4. Send the focus back...
+
+### `useEffect`
+
+1. Add `useEffect` to import statement on _line 9_ of `App.jsx` with a comma after `useState`.
+
+2. Set up the function with a dependency, so it only changes when something in it's dependency changes rather than when **anything** changes.
+
+```jsx
+useEffect(() => {}, []);
+```
+
+3. **Cut and copy** the `JSON.parse`... line from _line 14_'s `useState`.
+
+4. Within `useEffect` `setItems()` to this copied line. This will set the items state **at load time**.
+
+5. Initialize `useState` to an empty array.
+
+![importing use Effect, initializing items use State to an empty array, use Effect function calling shopping list from local Storage when the page loads](screenshots/App15.png)
