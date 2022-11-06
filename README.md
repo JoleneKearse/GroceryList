@@ -424,6 +424,28 @@ This tells our user how many items are on their list.
 
 ### `Footer` Componenet
 
+1. Create `Footer.jsx` using the `Paragraphy` component from Dracula UI, or `Text` will work too.
+
+![Footer component file using Paragraph from Dracula UI](screenshots/Footer1.png)
+
+2. Import the component into `App.jsx`.
+
+![import statement for Footer in App file](screenshots/App9.png)
+
+3. Add component to the JSX.
+
+4. Pass the **prop** down to Footer. We can name it whatever we want, so we'll call it `length`.
+
+![passing the length of the items list to Footer](screenshots/App10.png)
+
+5. Add `color` and `align` Dracula UI attributes to style.
+
+6. Within the `Paragraph`, use the expression `{length}` to get the passed number of list items.
+
+7. Use a ternary expression after `List` to display `Item` or `Item**s**` based on the number.
+
+![styled Paragraph using props to show number of items and ternary expression to construct grammatically correct sentence](screenshots/Footer2.png)
+
 ### `AddItem` Component
 
 [top](https://github.com/JoleneKearse/GroceryList#table-of-contents)

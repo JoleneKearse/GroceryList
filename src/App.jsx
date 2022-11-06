@@ -48,6 +48,7 @@ export default function App() {
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
+      <Footer length={items.length}/>
     </Box>
   );
 }
