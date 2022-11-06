@@ -382,13 +382,17 @@ This saves the state to **local storage**.
 
 3. Tab all the code over.
 
-4. After the closing `</List>` tag and **one indentation in**, continue the ternary. Add a `<p>` tag with a style expression and our message.
+4. After the closing `</List>` tag and **one indentation in**, continue the ternary.
 
-5. Paste the `)}` to close out the ternary operator.
+5. Add the Dracula UI `Text` component to the **import statement** on _line 2_.
 
-6. One indent **in** add the closing fragment, `</>`.
+6. Add a `<Text>` tag with a style expression and our message.
 
-7. Close the **return statement** and **function**.
+7. Paste the `)}` to close out the ternary operator.
+
+8. One indent **in** add the closing fragment, `</>`.
+
+9. Close the **return statement** and **function**.
 
 ![end of the ternary operation, JSX, and function](screenshots/ItemList6.png)
 

@@ -1,5 +1,5 @@
 import 'dracula-ui/styles/dracula-ui.css';
-import { List, Checkbox } from 'dracula-ui';
+import { List, Checkbox, Text } from 'dracula-ui';
 import { useState } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
 
@@ -75,8 +75,8 @@ export default function ItemList() {
           ))}
         </List>
       ) : (
-        <p style={{ marginTop: "2rem" }}>Empty list.</p>
-      )};
+        <Text align="center" as="p" style={{ marginTop: "1.5rem" }}>Empty list.</Text>
+      )}
     </>
   )
 }
