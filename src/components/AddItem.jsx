@@ -7,7 +7,7 @@ import { FaPlus } from 'react-icons/fa';
 export default function AddItem({ newItem, setNewItem, handleSubmit }) {
   // const inputRef = useRef();
   return (
-    <form className="inputBlock">
+    <form className="inputBlock" onSubmit={() => handleSubmit}>
       <label htmlFor="addItem" className="sr-only">Add Item</label>
       <Input
         color="pink"
