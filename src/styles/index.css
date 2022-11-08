@@ -80,6 +80,9 @@ li.item:focus .drac-text {
 
 /* ---------- LAYOUT ----------*/
 
+.drac-box {
+  height: auto;
+}
 .inputBlock {
   display: flex;
   justify-content: center;

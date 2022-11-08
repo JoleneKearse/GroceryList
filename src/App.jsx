@@ -50,7 +50,7 @@ export default function App() {
   }
 
   return (
-    <Box color='blackSecondary' m='lg' p='md' rounded='lg' width='md'>
+    <Box color="blackSecondary" m="lg" p="md" rounded="lg" width="md" height="auto">
       <Header />
       <AddItem
         newItem={newItem}
