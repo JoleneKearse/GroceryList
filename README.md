@@ -33,9 +33,12 @@ This is **Grocery List App** can:
   - [Add a Component: `Header`](https://github.com/JoleneKearse/GroceryList#add-a-component-header)
   - [ItemList](https://github.com/JoleneKearse/GroceryList#itemlist)
     - [Set Up a Default List](https://github.com/JoleneKearse/GroceryList#set-up-a-default-list)
-    - [Style with Dracula UI and CSS](https://github.com/JoleneKearse/GroceryList#style-with-dracula-ui-or-css)
     - [Use Font Awesome Icons](https://github.com/JoleneKearse/GroceryList#use-font-awesome-icons)
-    - [HandleChecks](https://github.com/JoleneKearse/GroceryList#handle-checks)
+    - [Style with Dracula UI and CSS](https://github.com/JoleneKearse/GroceryList#style-with-dracula-ui-or-css)
+    - [Handle Checks](https://github.com/JoleneKearse/GroceryList#handle-checks)
+    - [Handle Delete](https://github.com/JoleneKearse/GroceryList#handle-delete)
+    - [Add Empty List Message](https://github.com/JoleneKearse/GroceryList#add-empty-list-message)
+  - [Pass props Down From `App` to `ItemList` Components](https://github.com/JoleneKearse/GroceryList#pass-props-down-from-app-to-itemlist-components)
   - [`AddItem` Component](https://github.com/JoleneKearse/GroceryList#additem-component)
     - [Set Up State](https://github.com/JoleneKearse/GroceryList#set-the-state)
 
@@ -335,7 +338,7 @@ import { FaTrashAlt } from "react-icons/fa";
 
 2. Some were easier to control with regular CSS, like `font-size` and **hover/focus effects**. The **icons** can be targetted by the `svg` selector.
 
-3. The most complex thing was getting the item text to change colour when the li was hovered on. I had to grab the class name using **DevTools**.
+3. The most complex thing was getting the item text to change colour when the `li` was hovered on. I had to grab the class name using **DevTools**.
 
 ```css
 li.item:hover .drac-text,
@@ -348,11 +351,11 @@ li.item:focus .drac-text {
 
 [top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
-1. Set up the `handleCheck` function to take in the `id`. Create a `listItems` variable to **map over** each item: checking if it is the clicked **id**, if so create a **new array so we don't directly change the state** and then flip that item's checked value. After **set the items to the updated state**.
+1. Set up the `handleCheck` function to take in the `id`. Create a `listItems` variable to **map over** each item: checking if it is the clicked `id`, if so create a **new array so we don't directly change the state** and then flip that item's checked value. Afterwards **set the items to the updated state**.
 
 ![handleCheck function mapping over items in listItems to check id, create a new array, then change checked value](screenshots/ItemList2.png)
 
-2. Set up **conditional styling** to add a line through the item. To the `label` tag, add a `style` attribution with curly brackets, `{ }` so we can use a **ternary operator** to only apply the rule when the item has been checked.
+2. Set up **conditional styling** to add a line through the item to further indicate that it's checked. To the `label` tag, add a `style` attribution with double curly brackets, `{ }` so we can use a **ternary operator** to only apply the rule when the item has been checked.
 
 ![style attribute checking if item checked and applying a line through text decoration or nothing](screenshots/ItemList3.png)
 
@@ -378,13 +381,13 @@ This saves the state to **local storage**.
 
 #### Add Empty List Message
 
-1. Add `<>` and `</>` tags as the first item, then tab everything over. This is needed because we will use a ternary operator on `<List>`.
+1. Add `<>` and `</>` tags as the first item, then tab everything over. This is needed because we will use a ternary operator on `<List>` and React must have one element to render.
 
-2. Next indentation over begin the ternary with `{items.length ? (`, then **cut** the `)}` - to be added afterwards. In essence, this is saying if there are items, then proceed with all the existing code.
+2. Tab over and begin the ternary with `{items.length ? (`, then **cut** the `)}` - to be added afterwards. In essence, this is saying if there are items, then proceed with all the existing code.
 
-3. Tab all the code over.
+3. Tab all the code over once, so no indentation errors will be thrown.
 
-4. After the closing `</List>` tag and **one indentation in**, continue the ternary.
+4. After the closing `</List>` tag and **one indentation in**, continue the ternary like on _line 77_.
 
 5. Add the Dracula UI `Text` component to the **import statement** on _line 2_.
 
@@ -398,7 +401,7 @@ This saves the state to **local storage**.
 
 ![end of the ternary operation, JSX, and function](screenshots/ItemList6.png)
 
-> **Note**: I had quite the difficult time finding exactely which bracket (rounded, curly) was wrong. I've included a [copy of the code](https://github.com/JoleneKearse/GroceryList/blob/main/screenshots/sampleEmptyItemListMsg.jsx) up to this state to compare. I suggest using [DiffChecker](https://www.diffchecker.com/#) to compare. It's so easy to make a single, critical mistake here! 😭
+> **Note**: I had quite the difficult time finding exactly which bracket (rounded, curly) was wrong. I've included a [copy of the code](https://github.com/JoleneKearse/GroceryList/blob/main/screenshots/sampleEmptyItemListMsg.jsx) up to this state to compare. I suggest using [DiffChecker](https://www.diffchecker.com/#) to compare. It's so easy to make a single, critical mistake here! 😭
 
 ### Pass **props** Down From `App` to `ItemList` Components
 
@@ -416,7 +419,7 @@ This tells our user how many items are on their list.
 
 4. Repeat for `handleCheck` and `handleDelete` functions: cut and copy, and pass as props.
 
-5. Back in `ItemList.jsx`, destructure the props to gain access. Pay attention to any that are _greyedout_, like `setItems`. A quick scan shows that it isn't used in this file (only used in the functions). So you can delete it.
+5. Back in `ItemList.jsx`, destructure the props to gain access. Pay attention to any that are _grayedout_, like `setItems`. A quick scan shows that it isn't used in this file (only used in the functions). So you can delete it from this file.
 
 ![destructured props in Item List, with set Items greyedout](screenshots/ItemList7.gif)
 
@@ -424,7 +427,7 @@ This tells our user how many items are on their list.
 
 7. Add `import { useState } from 'react';` to `App.jsx` and remove from `ItemList.jsx`.
 
-### `Footer` Componenet
+### `Footer` Component
 
 1. Create `Footer.jsx` using the `Paragraphy` component from Dracula UI, or `Text` will work too.
 
