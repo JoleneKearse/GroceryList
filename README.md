@@ -39,8 +39,14 @@ This is **Grocery List App** can:
     - [Handle Delete](https://github.com/JoleneKearse/GroceryList#handle-delete)
     - [Add Empty List Message](https://github.com/JoleneKearse/GroceryList#add-empty-list-message)
   - [Pass props Down From `App` to `ItemList` Components](https://github.com/JoleneKearse/GroceryList#pass-props-down-from-app-to-itemlist-components)
+  - [`Footer` Component](https://github.com/JoleneKearse/GroceryList#footer-component)
+  - [Use Abstraction to Clean-up Code](https://github.com/JoleneKearse/GroceryList#use-abstraction-to-clean-up-code)
   - [`AddItem` Component](https://github.com/JoleneKearse/GroceryList#additem-component)
     - [Set Up State](https://github.com/JoleneKearse/GroceryList#set-the-state)
+  - [Load State from `localStorage`](https://github.com/JoleneKearse/GroceryList#load-state-from-localstorage)
+  - [Add Search Functionality](https://github.com/JoleneKearse/GroceryList#add-search-functionality)
+  - [Add Hook to Shift Focus](https://github.com/JoleneKearse/GroceryList#add-a-hook-to-shift-focus)
+  - [`useEffect`](<[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)>)
 
 ## The Process
 
@@ -371,6 +377,8 @@ This saves the state to **local storage**.
 
 #### Handle Delete
 
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
+
 1. Add an `onClick` event to the **trash can icon** and use an **anonymous function** so we can pass in the **item's id**.
 
 ![on click event added to delete button calling the handleDelete function with id passed in](screenshots/ItemList4.png)
@@ -380,6 +388,8 @@ This saves the state to **local storage**.
 ![handle delete function creating a new list items variable filtering out the clicked item, setting state and saving to local storage](screenshots/ItemList5.png)
 
 #### Add Empty List Message
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 1. Add `<>` and `</>` tags as the first item, then tab everything over. This is needed because we will use a ternary operator on `<List>` and React must have one element to render.
 
@@ -405,6 +415,8 @@ This saves the state to **local storage**.
 
 ### Pass **props** Down From `App` to `ItemList` Components
 
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
+
 This tells our user how many items are on their list.
 
 1. In `ItemList.jsx`, highlight the entire list variable, use `Ctrl` + `X` to cut it.
@@ -429,6 +441,10 @@ This tells our user how many items are on their list.
 
 ### `Footer` Component
 
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
+
+This will show the user how many items are on their Grocery List.
+
 1. Create `Footer.jsx` using the `Paragraphy` component from Dracula UI, or `Text` will work too.
 
 ![Footer component file using Paragraph from Dracula UI](screenshots/Footer1.png)
@@ -447,11 +463,13 @@ This tells our user how many items are on their list.
 
 6. Within the `Paragraph`, use the expression `{length}` to get the passed number of list items.
 
-7. Use a ternary expression after `List` to display `Item` or `Item**s**` based on the number.
+7. Use a ternary expression after `List` to display `Item` or `Item(s)` based on the number.
 
 ![styled Paragraph using props to show number of items and ternary expression to construct grammatically correct sentence](screenshots/Footer2.png)
 
 ### Use Abstraction to Clean-up Code
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 `ItemList.jsx` is a bit unwieldy as we had a ternary expression to display our _Empty List._ message. **But** it started on _line 10_ and went all the way until _line 49_. We can make it a lot more **readable**!
 
@@ -553,6 +571,8 @@ This tells our user how many items are on their list.
 
 ### Load State from `localStorage`
 
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
+
 To-date the initial grocery list items are being added from our default list, so let's fix that!
 
 1. Delete the array within `useState` on _line 12_ of `App.jsx`.
@@ -562,6 +582,8 @@ To-date the initial grocery list items are being added from our default list, so
 ![replace the default array with local Storage](screenshots/App14.png)
 
 ### Add Search Functionality
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 1. Add a new component `SearchItem.jsx`.
 
@@ -599,6 +621,8 @@ To-date the initial grocery list items are being added from our default list, so
 
 ### Add a Hook to Shift Focus
 
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
+
 Currently, when the user uses the Plus Button to add an item, the focus stays there.
 
 ![focus on plus button after use](screenshots/resu2.png)
@@ -612,6 +636,8 @@ Currently, when the user uses the Plus Button to add an item, the focus stays th
 4. Send the focus back...
 
 ### `useEffect`
+
+[top](https://github.com/JoleneKearse/GroceryList#table-of-contents)
 
 1. Add `useEffect` to import statement on _line 9_ of `App.jsx` with a comma after `useState`.
 
