@@ -12,7 +12,7 @@ export default function ListLi({ items, handleCheck, handleDelete }) {
       {items.map((item) => (
         <li
           className="item"
-          // key={item.id}
+          key={item.id}
           py="sm"
           pb="sm"
         >
@@ -20,7 +20,7 @@ export default function ListLi({ items, handleCheck, handleDelete }) {
             type="checkbox"
             checked={item.checked}
             color="purple"
-            defaultChecked={false}
+            // defaultChecked={false}
             className=".drac-mr-lg"
             onChange={(() => handleCheck(item.id))}
           />

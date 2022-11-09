@@ -6,7 +6,7 @@ import AddItem from './components/AddItem';
 import SearchItem from './components/SearchItem';
 import ItemList from './components/ItemList';
 import Footer from './components/Footer';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -15,9 +15,10 @@ export default function App() {
   const [newItem, setNewItem] = useState("");
   const [search, setSearch] = useState("");
 
-  // useEffect(() => {
-  //   localStorage.setItem("shoppinglist", JSON.stringify(items));
-  // }, [items])
+  const setAndSaveItems = (newItems) => {
+    setItems(newItems);
+    localStorage.setItem("shoppinglist", JSON.stringify(newItems));
+  }
 
   const addItem = (item) => {
     // increment item id or set it as 1
@@ -26,17 +27,17 @@ export default function App() {
     const nextNewItem = { id: id, checked: false, item };
     // create new array to update state
     const listItems = [...items, nextNewItem];
-    setItems(listItems);
+    setAndSaveItems(listItems);
   }
 
   const handleCheck = (id) => {
     const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
-    setItems(listItems);
+    setAndSaveItems(listItems);
   }
 
   const handleDelete = (id) => {
     const listItems = items.filter((item) => item.id !== id);
-    setItems(listItems);
+    setAndSaveItems(listItems);
   }
 
   const handleSubmit = (e) => {

@@ -1,15 +1,10 @@
 import 'dracula-ui/styles/dracula-ui.css'
 import { Input } from 'dracula-ui';
 import { FaPlus } from 'react-icons/fa';
-import { useRef } from 'react';
 
 
 export default function AddItem({ newItem, setNewItem, handleSubmit }) {
-  const inputRef = useRef(null);
-  // const handleBtnSubmit = (e) => {
-  //   handleSubmit();
-  //   inputRef.current.focus();
-  // }
+
   return (
     <form className="inputBlock" onSubmit={handleSubmit}>
       <label htmlFor="addItem" className="sr-only">Add Item</label>
@@ -21,7 +16,6 @@ export default function AddItem({ newItem, setNewItem, handleSubmit }) {
         mr='xs'
         size="lg"
         autoFocus
-        ref={inputRef}
         id="addItem"
         type="text"
         placeholder="What do you need?"
@@ -33,6 +27,7 @@ export default function AddItem({ newItem, setNewItem, handleSubmit }) {
         stoke="#9580ff"
         fill="#ff80bf"
         role="button"
+        // type="submit"
         tabIndex="0"
         aria-label="Add Item"
         onClick={handleSubmit}
